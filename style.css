@@ -1,122 +1,75 @@
-/* Базовая сброска и фон */
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
   font-family: 'Titillium Web', sans-serif;
   background: #0f0f0f;
   color: #eee;
 }
 
-/* Шапка */
 .header {
-  position: sticky; top: 0;
+  position: sticky;
+  top: 0;
   background: #111;
   padding: 16px 32px;
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid #0a0;
   z-index: 1000;
 }
+
 .logo {
   font-family: 'Razer Blackwidow', sans-serif;
   font-size: 24px;
   color: #0f0;
+  font-weight: bold;
 }
 
-/* Меню */
 .nav .menu {
   list-style: none;
   display: flex;
   gap: 24px;
 }
-.menu-item {
-  position: relative;
-}
+
 .menu-item a {
   text-decoration: none;
   color: #eee;
-  padding: 8px;
-  display: block;
-}
-.menu-item:hover > a {
-  color: #0f0;
-}
-
-/* Подменю */
-.submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #222;
-  list-style: none;
-  min-width: 150px;
-  border: 1px solid #0f0;
-  border-radius: 4px;
-}
-.menu-item:hover .submenu {
-  display: block;
-}
-.submenu li a {
   padding: 8px 12px;
-  color: #ccc;
-}
-.submenu li a:hover {
-  background: #0f0;
-  color: #000;
+  transition: color 0.3s;
 }
 
-/* Бургер-меню */
-.burger {
-  display: none;
-  font-size: 24px;
-  color: #eee;
-  cursor: pointer;
-}
-
-/* Адаптив + плавное открытие */
-@media (max-width: 768px) {
-  .nav .menu {
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background: #111;
-    width: 100%;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.4s ease-in-out;
-  }
-  .nav .menu.open {
-    max-height: 400px;
-  }
-  .burger {
-    display: block;
-  }
+.menu-item a:hover {
+  color: #0f0;
 }
 
 /* Контент */
 .content {
   padding: 40px 32px;
 }
+
 .banner {
   text-align: center;
   margin-bottom: 40px;
 }
+
 .banner h1 {
   font-size: 36px;
   color: #0f0;
 }
+
 .banner p {
   font-size: 20px;
   color: #ccc;
 }
 
-/* Товары */
+/* Продукты */
 .products {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
 }
+
 .product-card {
   background: #1a1a1a;
   border: 1px solid #333;
@@ -126,20 +79,24 @@ body {
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .product-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 16px rgba(0, 255, 0, 0.3);
 }
+
 .product-card img {
   width: 100%;
   height: auto;
   border-radius: 4px;
 }
+
 .price {
   color: #0f0;
   font-weight: bold;
   margin: 12px 0;
 }
+
 .btn {
   padding: 8px 16px;
   background: #0f0;
@@ -148,6 +105,7 @@ body {
   cursor: pointer;
   transition: background 0.3s;
 }
+
 .btn:hover {
   background: #0c0;
 }
