@@ -55,18 +55,27 @@
       color: #0f0;
     }
 .submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #222;
+  list-style: none;
+  min-width: 180px;
+  border: 1px solid #0f0;
+  border-radius: 4px;
   transition: all 0.3s ease;
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
+  z-index: 1000;
 }
 
 .menu-item:hover .submenu {
-  display: block;
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
+
 
     .submenu li a {
       padding: 10px 16px;
