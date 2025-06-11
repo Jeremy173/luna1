@@ -1,4 +1,8 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Titillium Web', sans-serif;
@@ -31,6 +35,10 @@ body {
   gap: 24px;
 }
 
+.menu-item {
+  position: relative;
+}
+
 .menu-item a {
   text-decoration: none;
   color: #eee;
@@ -40,6 +48,42 @@ body {
 
 .menu-item a:hover {
   color: #0f0;
+}
+
+/* Подменю с анимацией */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #111;
+  border: 1px solid #0f0;
+  border-radius: 4px;
+  min-width: 160px;
+  z-index: 999;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.submenu li a {
+  display: block;
+  padding: 10px 16px;
+  color: #ccc;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.submenu li a:hover {
+  background: #0f0;
+  color: #000;
 }
 
 /* Контент */
@@ -108,36 +152,4 @@ body {
 
 .btn:hover {
   background: #0c0;
-}
-.menu-item {
-  position: relative;
-}
-
-.submenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #111;
-  border: 1px solid #0f0;
-  border-radius: 4px;
-  display: none;
-  min-width: 160px;
-  z-index: 999;
-}
-
-.submenu li a {
-  display: block;
-  padding: 10px 16px;
-  color: #ccc;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.submenu li a:hover {
-  background: #0f0;
-  color: #000;
-}
-
-.menu-item:hover .submenu {
-  display: block;
 }
