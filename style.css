@@ -109,3 +109,35 @@ body {
 .btn:hover {
   background: #0c0;
 }
+.menu-item {
+  position: relative;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #111;
+  border: 1px solid #0f0;
+  border-radius: 4px;
+  display: none;
+  min-width: 160px;
+  z-index: 999;
+}
+
+.submenu li a {
+  display: block;
+  padding: 10px 16px;
+  color: #ccc;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.submenu li a:hover {
+  background: #0f0;
+  color: #000;
+}
+
+.menu-item:hover .submenu {
+  display: block;
+}
